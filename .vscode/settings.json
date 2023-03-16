@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "delivery_goods_db",
+            "database": "delivery_goods_db",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ]
+}
