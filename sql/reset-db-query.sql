@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS "orders_to_shipments";
-DROP TABLE IF EXISTS "recipients";
 DROP TABLE IF EXISTS "shipments";
 DROP TABLE IF EXISTS "products";
 DROP TABLE IF EXISTS "orders";
@@ -48,18 +47,10 @@ CREATE TABLE "shipments"(
   "dateShipment" TIMESTAMP DEFAULT NULL
 );
 
-CREATE TABLE "recipients" (
-  "id" serial PRIMARY KEY,
-  "firstName" varchar(64) NOT NULL CHECK ("firstName" != ''),
-  "lastName" varchar(64) NOT NULL CHECK ("lastName" != ''),
-  "address" JSONB,
-  "phone" varchar(32) NOT NULL CHECK ("phone" != '') UNIQUE
-);
-
 CREATE TABLE "orders_to_shipments"(
   "shipmentId" serial REFERENCES "shipments"("id"),
   "orderId" serial REFERENCES "orders"("id"),
-  "recipientId" serial REFERENCES "recipients"("id"),
+  "customersId" serial REFERENCES "customers"("id"),"quantityProducts" integer NOT NULL CHECK ("quantityProducts" > 0 ),
   PRIMARY KEY ("shipmentId", "orderId")
 );
 

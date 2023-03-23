@@ -27,15 +27,8 @@ INSERT INTO "shipments" ( "status")
 VALUES
 ('done'), ('pending'), ('pending'), ('pending');
 
-INSERT INTO "recipients" ( "firstName", "lastName",  "address", "phone" )
+INSERT INTO "orders_to_shipments" ( "shipmentId", "orderId",  "customersId", "quantityProducts")
 VALUES
-('Eeuuu', 'Tttttt', '{"town":"zppp", "street":"qq"}', '2512529'),
-('Rrrrrr', 'Sssdass', '{"town":"rh", "street":"uu"}', '2004789'),
-('Mffffm', 'Fffzcxf', '{"town":"yy", "street":"77i"}', '27bv789'),
-('Pppppp', 'Qqdfqq', '{"town":"po", "street":"qq"}', '25885489');
-
-INSERT INTO "orders_to_shipments" ( "shipmentId", "orderId",  "recipientId")
-VALUES
-(2, 2, 1), (1, 3, 2), (3, 1, 3), (4, 4, 4);
+(2, 2, 1, 10), (1, 3, 2, 5), (3, 1, 3, 2), (4, 4, 4, 7);
 
 
